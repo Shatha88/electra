@@ -1,24 +1,20 @@
-// import 'package:final_project/extantions/push_andpop.dart';
-import 'package:electra/components/text_custom.dart';
-// import 'package:electra/constents/colors.dart';
+
+
+import 'package:electra/constents/colors_theme.dart';
 import 'package:electra/constents/spaces.dart';
 import 'package:electra/services/extention/navigator/navigator_ext.dart';
 import 'package:flutter/material.dart';
 
-// import '../../Screens/HomeScreen.dart';
-// import '../../conistans/colors.dart';
-// import '../../conistans/spaces.dart';
-
-class AddStationAppBar extends StatelessWidget {
-  const AddStationAppBar({
+class AppBar_AddStation extends StatelessWidget {
+  const AppBar_AddStation({
     super.key,
     required this.title,
     required this.icon,
-    required this.screen,
+    required this.page,
   });
   final String title;
   final IconData icon;
-  final Widget screen;
+  final  page;
 
   @override
   Widget build(BuildContext context) {
@@ -29,27 +25,29 @@ class AddStationAppBar extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              context.pop(view: screen);
+              context.push(view : page);
             },
             child: Container(
               height: 40,
               width: 40,
               decoration: BoxDecoration(
-                color: Colors.amber,
+                color: kcolorsyallow,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
                 icon,
                 size: 30,
-                color: Colors.teal,
+                color: kcolorsgerrn,
               ),
             ),
           ),
-          TextCustom(
-            text: title,
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
           klHSpace32,
         ],
