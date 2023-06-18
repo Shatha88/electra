@@ -1,17 +1,12 @@
 import 'dart:core';
 
-import 'package:electra/Screens/Provider/prov_stations.dart';
-import 'package:electra/components/add_station/add_station_appbar.dart';
-import 'package:electra/components/button_custom.dart';
-import 'package:electra/components/text_custom.dart';
-// import 'package:electra/constents/colors.dart';
+
+import 'package:electra/Screens/Provider/ProviderStationsScreen.dart';
+import 'package:electra/components/Provider/Componints/AddStationComponints/AppBar_AddStation.dart';
+import 'package:electra/components/Provider/Componints/ElvatedButtonCustom.dart';
+import 'package:electra/components/Provider/Componints/ManageStation/TextCustom.dart';
+import 'package:electra/constents/colors_theme.dart';
 import 'package:electra/constents/spaces.dart';
-// import 'package:final_project/Componints/AddStationComponints/AppBar_AddStation.dart';
-// import 'package:final_project/Componints/ElvatedButtonCustom.dart';
-// import 'package:final_project/Componints/ManageStation/TextCustom.dart';
-// import 'package:final_project/Screens/ProviderStationsPageScreen.dart';
-// import 'package:final_project/conistans/colors.dart';
-// import 'package:final_project/conistans/spaces.dart';
 import 'package:flutter/material.dart';
 
 class ManageStation extends StatefulWidget {
@@ -32,28 +27,28 @@ class _ManageStationState extends State<ManageStation> {
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: AddStationAppBar(
+              padding: const EdgeInsets.all(8.0),
+              child: AppBar_AddStation(
                 title: "Station Name",
                 icon: Icons.chevron_left,
-                screen: ProviderStation(),
+                page: ProviderStation(),
               ),
             ),
             const Center(
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Image(
                     height: 300,
                     width: 300,
-                    image: AssetImage("assets/images/station.jpg")),
+                    image: AssetImage("assets/station.jpg")),
               ),
             ),
             const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: TextCustom(
-                  text: "Create an Order : ",
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: TextCustum(
+                  titel: "Create an Order : ",
                 ),
               ),
             ),
@@ -64,11 +59,11 @@ class _ManageStationState extends State<ManageStation> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const TextCustom(text: "From"),
+                    const TextCustum(titel: "From"),
                     kVSpace8,
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.teal,
+                        primary: kcolorsgerrn,
                       ),
                       onPressed: () async {
                         DateTime? newDate = await showDatePicker(
@@ -78,18 +73,13 @@ class _ManageStationState extends State<ManageStation> {
                           lastDate: DateTime(2028),
                         );
                         if (newDate == null) return;
-                        TimeOfDay? newTime;
-                        if (context.mounted) {
-                          newTime = showTimePicker(
-                            context: context,
-                            initialTime: TimeOfDay(
-                              hour: fromDateTime.hour,
-                              minute: fromDateTime.minute,
-                            ),
-                          ) as TimeOfDay?;
-                        } else {
-                          newTime = null;
-                        }
+                        TimeOfDay? newTime = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay(
+                            hour: fromDateTime.hour,
+                            minute: fromDateTime.minute,
+                          ),
+                        );
                         if (newTime == null) return;
 
                         final fromNewDateTime = DateTime(
@@ -103,37 +93,31 @@ class _ManageStationState extends State<ManageStation> {
                           fromDateTime = fromNewDateTime;
                         });
                       },
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Add Start Time"),
                           Icon(
                             Icons.arrow_drop_up_outlined,
-                            color: Colors.grey,
+                            color: kcolorsgrey,
                           ),
                         ],
                       ),
                     ),
                     kVSpace16,
-                    TextCustom(
-                      text:
+                    TextCustum(
+                      titel:
                           "${fromDateTime.day}/${fromDateTime.month}/${fromDateTime.year} - ${fromDateTime.hour}:${fromDateTime.minute}",
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
                     )
                   ],
                 ),
                 Column(
                   children: [
-                    const TextCustom(
-                      text: "To",
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    const TextCustum(titel: "To"),
                     kVSpace8,
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.teal,
+                        primary: kcolorsgerrn,
                       ),
                       onPressed: () async {
                         DateTime? newDate = await showDatePicker(
@@ -143,18 +127,13 @@ class _ManageStationState extends State<ManageStation> {
                           lastDate: DateTime(2028),
                         );
                         if (newDate == null) return;
-                        TimeOfDay? newTime;
-                        if (context.mounted) {
-                          newTime = showTimePicker(
-                            context: context,
-                            initialTime: TimeOfDay(
-                              hour: fromDateTime.hour,
-                              minute: fromDateTime.minute,
-                            ),
-                          ) as TimeOfDay?;
-                        } else {
-                          newTime = null;
-                        }
+                        TimeOfDay? newTime = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay(
+                            hour: toDateTime.hour,
+                            minute: toDateTime.minute,
+                          ),
+                        );
                         if (newTime == null) return;
 
                         final toNewDateTime = DateTime(
@@ -168,38 +147,28 @@ class _ManageStationState extends State<ManageStation> {
                           toDateTime = toNewDateTime;
                         });
                       },
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          TextCustom(text: "Add End Time"),
+                          Text("Add End Time"),
                           Icon(
                             Icons.arrow_drop_up_outlined,
-                            color: Colors.grey,
+                            color: kcolorsgrey,
                           ),
                         ],
                       ),
                     ),
                     kVSpace16,
-                    TextCustom(
-                      text:
+                    TextCustum(
+                      titel:
                           "${toDateTime.day}/${toDateTime.month}/${toDateTime.year} - ${toDateTime.hour}:${toDateTime.minute}",
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
                     ),
                   ],
                 ),
               ],
             ),
             kVSpace64,
-            const ButtonCustom(
-              title: "Create",
-              screen: ProviderStation(),
-              forward: true,
-              hight: 20,
-              width: 100,
-              buttonColor: Colors.teal,
-              textColor: Colors.white,
-            ),
+            ElvatedButtonCustom(ButtonTitle: "Create", page: ProviderStation()),
           ],
         ),
       ),
