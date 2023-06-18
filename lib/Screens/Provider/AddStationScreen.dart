@@ -1,4 +1,3 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:electra/Screens/Provider/ProviderStationsScreen.dart';
 import 'package:electra/Screens/Provider/RequestStatusScreen.dart';
 import 'package:electra/components/Provider/Componints/AddStationComponints/AppBar_AddStation.dart';
@@ -41,7 +40,7 @@ class AddStation extends StatelessWidget {
                       context.push(view: RequestStatus());
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: kcolorsgerrn,
+                      backgroundColor: kcolorsgerrn,
                     ),
                     child: Text(
                       "Add Station",

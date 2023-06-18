@@ -27,7 +27,7 @@ class ElvatedButtonCustom extends StatelessWidget {
           context.push(view :page);
         },
         style: ElevatedButton.styleFrom(
-          primary: kcolorsgerrn,
+          backgroundColor: kcolorsgerrn,
         ),
         child: Text(
           ButtonTitle,

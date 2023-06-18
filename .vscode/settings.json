@@ -19,13 +19,11 @@
     "**/firebase_options.dart": true,
     "**/generated_plugin_registrant.dart": true,
     "**/ios": true,
-    "**/android": true,
+    "**/android": false,
     "**/web": true,
     "**/macos": true,
     "**/windows": true,
     "**/linux": true
   },
-  "cSpell.words": [
-    "Custom"
-  ]
+
 }

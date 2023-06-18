@@ -6,7 +6,6 @@ import 'package:electra/components/Provider/Componints/AddStationComponints/text
 import 'package:electra/constents/colors_theme.dart';
 import 'package:electra/constents/spaces.dart';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
@@ -31,9 +30,9 @@ class _addStationContainerState extends State<addStationContainer> {
 
   Future PickImage() async {
     try {
-      final Image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (image == null) return;
-      final imageTemporary = File(image!.path);
+      final imageTemporary = File(image.path);
       setState(() => this.image = imageTemporary);
     } on PlatformException catch (error) {
       print("Failed to pick image $error");
@@ -121,7 +120,7 @@ class _addStationContainerState extends State<addStationContainer> {
               width: 180,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: kcolorsgerrn,
+                  backgroundColor: kcolorsgerrn,
                 ),
                 onPressed: () {
                   getCurrentLocation().then((value) async {

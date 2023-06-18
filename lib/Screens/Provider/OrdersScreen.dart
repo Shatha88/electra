@@ -5,8 +5,6 @@ import 'package:electra/components/Provider/Componints/OrderPage/textcustomOrder
 import 'package:electra/constents/colors_theme.dart';
 import 'package:electra/constents/spaces.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class OrdersPage extends StatefulWidget {
   const OrdersPage({super.key});
