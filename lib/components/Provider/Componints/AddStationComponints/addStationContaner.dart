@@ -24,6 +24,7 @@ class addStationContainer extends StatefulWidget {
 
 class _addStationContainerState extends State<addStationContainer> {
   File? image;
+  // late File image = File("assets/images");
   late String lat;
   late String long;
   String locationMessage = "";

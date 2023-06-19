@@ -1,5 +1,3 @@
-
-
 import 'package:electra/constents/colors_theme.dart';
 import 'package:electra/constents/spaces.dart';
 import 'package:electra/services/extention/navigator/navigator_ext.dart';
@@ -14,7 +12,7 @@ class AppBar_AddStation extends StatelessWidget {
   });
   final String title;
   final IconData icon;
-  final  page;
+  final page;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +23,13 @@ class AppBar_AddStation extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              context.push(view : page);
+              context.push(view: page);
             },
             child: Container(
               height: 40,
               width: 40,
               decoration: BoxDecoration(
-                color: kcolorsyallow,
+                color: kcolorsgrey,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(

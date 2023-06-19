@@ -1,4 +1,3 @@
-
 import 'package:electra/Screens/Provider/EditStationScreen.dart';
 import 'package:electra/Screens/Provider/ManageStationScreen.dart';
 import 'package:electra/constents/colors_theme.dart';
@@ -114,7 +113,7 @@ class ProviderStationView extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "View",
+                        "Manage",
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

@@ -1,5 +1,3 @@
-
-
 import 'package:electra/components/Provider/Componints/text_custom.dart';
 import 'package:electra/constents/spaces.dart';
 import 'package:flutter/material.dart';

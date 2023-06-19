@@ -1,13 +1,11 @@
 import 'package:electra/Screens/Provider/ProviderStationsScreen.dart';
 import 'package:electra/components/Provider/Componints/AddStationComponints/AppBar_AddStation.dart';
 import 'package:electra/components/Provider/Componints/AddStationComponints/textCustom.dart';
-import 'package:electra/components/Provider/Componints/EditStation/updateBankAccount.dart';
 import 'package:electra/components/Provider/Componints/EditStation/updateImage.dart';
 import 'package:electra/components/Provider/Componints/ElvatedButtonCustom.dart';
 import 'package:electra/constents/colors_theme.dart';
 import 'package:electra/constents/spaces.dart';
 import 'package:flutter/material.dart';
-
 
 class EditStation extends StatefulWidget {
   const EditStation({super.key});
@@ -67,12 +65,6 @@ class _EditStationState extends State<EditStation> {
                           ),
                         ],
                       ),
-                      kVSpace8,
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: textCustom(titel: "Bank Account")),
-                      kVSpace8,
-                      updateBankAccount(),
                       kVSpace8,
                       Align(
                           alignment: Alignment.centerLeft,
