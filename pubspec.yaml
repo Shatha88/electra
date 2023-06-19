@@ -17,6 +17,8 @@ dependencies:
   geolocator: ^9.0.2
   url_launcher: ^6.1.11
   get_storage: ^2.1.1
+  font_awesome_flutter: ^10.4.0
+  google_fonts: ^4.0.4
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,8 @@ import 'package:electra/Screens/Provider/SettingScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Consumer/con_home.dart';
+
 class Screens extends StatelessWidget {
   const Screens({super.key});
 
@@ -35,7 +37,12 @@ class Screens extends StatelessWidget {
             case 1:
               return CupertinoTabView(
                 builder: (context) {
-                  return CupertinoPageScaffold(child: ProviderStation());
+                  // if (condition)  //user type provider
+                    //  return CupertinoPageScaffold(child: ProviderStation());
+                  // else 
+                    return CupertinoPageScaffold(child: ConHome());
+                  
+                 
                 },
               );
             case 2:
