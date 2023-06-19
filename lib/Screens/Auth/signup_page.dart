@@ -1,4 +1,5 @@
 import 'package:electra/Screens/Auth/ForgetPassword.dart';
+import 'package:electra/Screens/Auth/verifyEmail.dart';
 import 'package:electra/components/CustomTextField.dart';
 import 'package:flutter/material.dart';
 
@@ -89,7 +90,7 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                   Container(
-                    height: 80,
+                    height: 60,
                     child: Card(
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -311,7 +312,7 @@ class _SignupPageState extends State<SignupPage> {
                     onTap: () {
                       Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
-                              builder: (context) => const ForgetPassword()),
+                              builder: (context) => const verifyEmail()),
                           (route) => false);
                     },
                     child: const Align(
@@ -319,7 +320,7 @@ class _SignupPageState extends State<SignupPage> {
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         child: Text(
-                          " forget password?",
+                          " Verify Email?",
                           style: TextStyle(
                               color: txtFieldColor,
                               fontSize: 18,

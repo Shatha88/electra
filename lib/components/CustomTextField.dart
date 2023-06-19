@@ -33,62 +33,65 @@ class mTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextField(
-        enabled: true,
-        minLines: minLines,
-        maxLines: maxLines,
-        controller: controller,
-        onChanged: onChanged,
-        obscureText: obscureText,
-        obscuringCharacter: "*",
-        cursorColor: greenGradient,
-        cursorWidth: 6,
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          filled: true,
-          hintText: hint,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-            borderSide: const BorderSide(
-              width: 0,
-              style: BorderStyle.none,
+      child: SizedBox(
+        height: 50,
+        child: TextField(
+          enabled: true,
+          minLines: minLines,
+          maxLines: maxLines,
+          controller: controller,
+          onChanged: onChanged,
+          obscureText: obscureText,
+          obscuringCharacter: "*",
+          cursorColor: greenGradient,
+          cursorWidth: 6,
+          decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            hintText: hint,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: const BorderSide(
+                width: 0,
+                style: BorderStyle.none,
+              ),
             ),
-          ),
 
-          // labelText: label,
-          // prefixIcon: Icon(
-          //   icon,
-          //   color: Colors.red,
-          // ),
-          // suffixIcon: isPassword!
-          //     ? IconButton(
-          //         onPressed: onPressed,
-          //         icon: const Icon(
-          //           LineIcons.eye,
-          //           color: Colors.black54,
-          //         ))
-          //     : null,
-          suffixIcon: (isPassword == false)
-              ? IconButton(
-                  onPressed: onPressed,
-                  icon: const Icon(
-                    LineIcons.eye,
-                    color: Colors.black54,
-                  ))
-              : (isPassword == true)
-                  ? IconButton(
-                      onPressed: onPressed,
-                      icon: const Icon(
-                        LineIcons.eyeSlash,
-                        color: Colors.black54,
-                      ))
-                  : (isPassword == null)
-                      ? null
-                      : null,
-          labelStyle: const TextStyle(
-              color: Colors.black54,
-              fontSize: 20,
-              fontWeight: FontWeight.normal),
+            // labelText: label,
+            // prefixIcon: Icon(
+            //   icon,
+            //   color: Colors.red,
+            // ),
+            // suffixIcon: isPassword!
+            //     ? IconButton(
+            //         onPressed: onPressed,
+            //         icon: const Icon(
+            //           LineIcons.eye,
+            //           color: Colors.black54,
+            //         ))
+            //     : null,
+            suffixIcon: (isPassword == false)
+                ? IconButton(
+                    onPressed: onPressed,
+                    icon: const Icon(
+                      LineIcons.eye,
+                      color: Colors.black54,
+                    ))
+                : (isPassword == true)
+                    ? IconButton(
+                        onPressed: onPressed,
+                        icon: const Icon(
+                          LineIcons.eyeSlash,
+                          color: Colors.black54,
+                        ))
+                    : (isPassword == null)
+                        ? null
+                        : null,
+            labelStyle: const TextStyle(
+                color: Colors.black54,
+                fontSize: 20,
+                fontWeight: FontWeight.normal),
+          ),
         ),
       ),
     );
