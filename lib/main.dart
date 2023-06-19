@@ -1,3 +1,4 @@
+import 'package:electra/Screens/Auth/homeScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'Screens/Provider/screens.dart';
@@ -13,7 +14,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Screens(),
+      // home: Screens(), TODO: UNCOMMRNT
+      home: HomeScreen(),
     );
   }
 }
